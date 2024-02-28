@@ -1,0 +1,352 @@
+body {
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* ---- Set up site grid ---- */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: auto;
+    grid-template-areas: "header header" "nav nav" "main aside" "footer footer";
+    grid-gap: 4px;
+}
+
+header {
+    grid-area: header;
+    background-color: #335AC7;
+    padding: 0px;
+    color: white;
+    height: 84px;
+}
+
+
+/* border width for light areas */
+
+nav,
+main,
+aside {
+    border-style: solid;
+    border-width: 1px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: yellow;
+}
+
+main {
+    grid-area: main;
+    background-color: darkseagreen;
+}
+
+aside {
+    grid-area: aside;
+    background-color: oldlace;
+}
+
+footer {
+    grid-area: footer;
+    background-color: violet;
+    text-align: right;
+}
+
+
+/* ---- grid for front page images ----*/
+
+.homeimages {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: auto;
+    grid-template-areas: "free haiku" "limerick acrostic";
+    grid-gap: 20px;
+    width: 520px;
+    margin: auto;
+    padding: 5px;
+}
+
+.free {
+    grid-area: free;
+}
+
+.haiku {
+    grid-area: haiku;
+}
+
+.limerick {
+    grid-area: limerick;
+}
+
+.acrostic {
+    grid-area: acrostic;
+}
+
+
+/* ---- General formatting ---- */
+
+.box {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-family: "Rubik Doodle Shadow", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 300%;
+    padding-left: 150px;
+    margin: auto;
+    /* -- Transform to vertically canter heading */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+img.roundleft {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 1px 0px 10px #000;
+    float: left;
+}
+
+.allround {
+    border-radius: 20px;
+    box-shadow: 1px 0px 10px #000;
+}
+
+.centered {
+    text-align: center;
+}
+
+
+/* ---- Hover Text Formatting ----*/
+
+.hvrbox,
+.hvrbox * {
+    box-sizing: border-box;
+}
+
+.hvrbox {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 20px;
+    height: auto;
+}
+
+.hvrbox img {
+    max-width: 100%;
+}
+
+.hvrbox .hvrbox-layer_bottom {
+    display: block;
+}
+
+.hvrbox .hvrbox-layer_top {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 15px;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -ms-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.hvrbox:hover .hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+    opacity: 1;
+}
+
+.hvrbox .hvrbox-text {
+    text-align: center;
+    font-size: 18px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.hvrbox .hvrbox-text_mobile {
+    font-size: 15px;
+    border-top: 1px solid rgb(179, 179, 179);
+    /* for old browsers */
+    border-top: 1px solid rgba(179, 179, 179, 0.7);
+    margin-top: 5px;
+    padding-top: 2px;
+    display: none;
+}
+
+.hvrbox.active .hvrbox-text_mobile {
+    display: block;
+}
+
+
+/* ---- Hidden Box Formatting ---- */
+
+#hidden {
+    display: none;
+}
+
+.poemtype {
+    font-size: 150%;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.info {
+    border-style: solid;
+    border-width: 1px;
+    background-color: #8b5b75;
+    border-color: #000000;
+    padding: 10px;
+    width: 85%;
+}
+
+.showhide {
+    background-color: #9b7ca3;
+    font-style: italic;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.showhide:hover {
+    color: #918590;
+    background-color: #000;
+}
+
+
+/* Link Formatting */
+
+
+/* Links in the main section & sidebar */
+
+a:link {
+    color: #76ffddec;
+}
+
+a:hover {
+    color: #572b55;
+}
+
+a:visited {
+    color: olive;
+}
+
+
+/* Top Navigation */
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #533600;
+}
+
+nav a:link,
+nav a.visited {
+    color: #533600;
+}
+
+
+/* Dropdown menu */
+
+
+/* Style The Dropdown Button */
+
+.dropbtn {
+    background-color: #7f8f6100;
+    color: rgb(111, 119, 128);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+
+/* Customised from 
+  https://www.w3schools.com/css/css_dropdowns.asp */
+
+.littlearrow {
+    font-size: 150%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #9b7ca3
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #ff0000;
+}
+
+
+/* --- Google From Styling ---*/
+
+iframe {
+    width: 85%;
+    height: 754px;
+    margin: auto;
+    border: 0;
+}
